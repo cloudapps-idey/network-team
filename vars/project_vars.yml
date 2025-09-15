@@ -1,5 +1,5 @@
 # Input values for creating projects
-controller_projects_all_projects:
+projects_to_create:
   - name: "NetworkPaloAlto"
     organization: "NetworkOrg"
     scm_url: "git@github.com:cloudapps-idey/network-team.git"
