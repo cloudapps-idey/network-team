@@ -3,4 +3,6 @@ collections:
   - name: https://github.com/cloudapps-idey/ansible-config-as-code.git
     type: git
     version: main
+  # Add the new collection here
+  - name: infra.aap_configuration
  
