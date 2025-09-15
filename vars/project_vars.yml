@@ -1,4 +1,4 @@
-# Input values for creating projects
+---
 controller_projects_all:
   - name: "NetworkPaloAlto"
     organization: "NetworkOrg"
