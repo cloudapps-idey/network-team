@@ -10,11 +10,10 @@
   tasks:
     - name: Debugging - show projects_to_create variable
       ansible.builtin.debug:
-        var: projects_to_create
+        var: controller_projects_all
       # Check for a "success" message. If this fails, the issue is with vars_files.
 
 
 # This part is to import the project.yml playbook and pass its variable.
 - import_playbook: ansible_config_as_code.controller_automation.project
-  vars:
-    projects_to_create: "{{ projects_to_create }}"
+  
