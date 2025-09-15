@@ -5,8 +5,10 @@
   gather_facts: false
 
   vars_files:
+    - vars/org_vars.yml
     - vars/project_vars.yml
 
-  tasks:
-    - name: Run the playbook from the collection to create projects
-      ansible.builtin.import_playbook: ansible_config_as_code.controller_automation.project
+# This is where import_playbook should be.
+# It is at the same level as 'hosts' and 'vars_files'
+
+- import_playbook: ansible_config_as_code.controller_automation.project
