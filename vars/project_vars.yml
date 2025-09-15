@@ -1,6 +1,6 @@
 ---
 controller_projects_all:
-  - name: "NetworkPaloAlto"
+  - name: "NetworkPaloAlto2"
     organization: "NetworkOrg"
     scm_url: "https://github.com/cloudapps-idey/network-team.git"
     scm_branch: "main"
@@ -9,7 +9,7 @@ controller_projects_all:
     scm_delete_on_update: false
     credential: "Github"
 
-  - name: "RouterAutomation"
+  - name: "RouterAutomation2"
     organization: "NetworkOrg"
     scm_url: "https://github.com/cloudapps-idey/network-team.git"
     scm_branch: "main"
