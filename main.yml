@@ -5,7 +5,6 @@
   gather_facts: false
 
   vars_files:
-    - vars/org_vars.yml
     - vars/project_vars.yml
 
 - import_playbook: ansible_config_as_code.controller_automation.project
