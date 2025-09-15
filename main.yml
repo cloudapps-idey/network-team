@@ -4,10 +4,10 @@
   connection: local
   gather_facts: false
 
-  vars_files:
-    - vars/project_vars.yml
-
   tasks:
+    - name: Load variables from file
+      include_vars: vars/project_vars.yml
+      
     - name: Debugging - show projects_to_create variable
       ansible.builtin.debug:
         var: controller_projects_all
@@ -17,6 +17,6 @@
 # This part is to import the project.yml playbook and pass its variable.
 - import_playbook: ansible_config_as_code.controller_automation.project
   vars: 
-    controller_projects_all
+    controller_projects_all: "{{ controller_projects_all }}
     
   
