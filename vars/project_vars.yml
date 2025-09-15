@@ -2,7 +2,7 @@
 projects_to_create:
   - name: "NetworkPaloAlto"
     organization: "NetworkOrg"
-    scm_url: "git@github.com:cloudapps-idey/network-team.git"
+    scm_url: "https://github.com/cloudapps-idey/network-team.git"
     scm_branch: "main"
     scm_type: "git"
     scm_clean: true
@@ -11,7 +11,7 @@ projects_to_create:
 
   - name: "RouterAutomation"
     organization: "NetworkOrg"
-    scm_url: "git@github.com:cloudapps-idey/network-team.git"
+    scm_url: "https://github.com/cloudapps-idey/network-team.git"
     scm_branch: "main"
     scm_type: "git"
     scm_clean: true
