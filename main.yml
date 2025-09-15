@@ -15,8 +15,8 @@
 
 
 # This part is to import the project.yml playbook and pass its variable.
-#- import_playbook: ansible_config_as_code.controller_automation.project
-- import_playbook: ansible_config_as_code.controller_automation.aap_config
+#- import_playbook: ansible_config_as_code.controller_automation.aap_config
+- import_playbook: ansible_config_as_code.controller_automation.projects
   vars: 
     controller_projects_all: "{{ controller_projects_all }}"
     
