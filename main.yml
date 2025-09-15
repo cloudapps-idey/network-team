@@ -16,4 +16,6 @@
 
 # This part is to import the project.yml playbook and pass its variable.
 - import_playbook: ansible_config_as_code.controller_automation.project
+  vars:
+    controller_projects: "{{ controller_projects_all }}"
   
