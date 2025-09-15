@@ -1,93 +1,93 @@
-# Ansible Automation Platform Configuration as Code examples template
+# network-team
 
-This is a combination of all the Red Hat CoP Config as Code collections to deploy and configure AAP. This is built for multi environment (meaning multiple AAP instances/clusters). If you want an object across all environments put it in the correct file/list under the all group. If there is a specific object for only one environment then put it under that environments folder[^1].
 
-[^1]: If you only have/want one environment you could delete dev/test/prod folders in group_vars and remove all the _all added to vars in all group. Also if you want to have each team/group maintain their own org/code in their own repo, see the repo_per_org branch.
 
-The main branch is built for 2.5+ AAP if you are running 2.4 or lower make sure to copy the template branch aap2.4
+## Getting started
 
-You will need to replace the vault files with your own with these variables:
+To make it easy for you to get started with GitLab, here's a list of recommended next steps.
 
-```yaml
----
-console_token: 'this is the one from console.redhat.com'
-redhat_api_token: 'this is the one linked below about api token'
-rh_username: 'redhat user login (this is used to attach your subs to controller)'
-rh_password: 'password for redhat account'
-root_machine_pass: 'password for root user on builder (if not root user more changes will need to be made)'
-hub_api_user_pass: 'this will create and use this password can be generated'
-controller_api_user_pass: 'this will create and use this password can be generated'
-aap_pass: 'admin account pass for gateway, if none is given it will default to Password1234!'
-hub_pass: 'hub admin account pass, if none is given it will default to Password1234!'
-# hub_token: 'hub token to pull collections, it is best to save in vault for more reliable usage vs generating on the fly'
-vault_pass: 'the password to decrypt this vault'
-...
+Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+
+## Add your files
+
+- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
+- [ ] [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
+
+```
+cd existing_repo
+git remote add origin https://gitlab.com/idey/network-team.git
+git branch -M main
+git push -uf origin main
 ```
 
-**_NOTE:_** Do not forget to update your inventory files replacing the `HERE` lines, if you do not have a `builder` server you can use `hub` for this. Also update `scm_url` in `group_vars/all/projects.yml` with your git URL.
+## Integrate with your tools
 
-## Getting Help
+- [ ] [Set up project integrations](https://gitlab.com/idey/network-team/-/settings/integrations)
 
-We are on the Ansible Forums and Matrix, if you want to discuss something, ask for help, or participate in the community, please use the #infra-config-as-code tag on the fourm, or post to the chat in Matrix.
+## Collaborate with your team
 
-[Ansible Forums](https://forum.ansible.com/tag/infra-config-as-code)
+- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
+- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
+- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
+- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
+- [ ] [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
 
-[Matrix Chat Room](https://matrix.to/#/#aap_config_as_code:ansible.com)
+## Test and Deploy
 
-## Requirements
+Use the built-in continuous integration in GitLab.
 
-The supported collections that contains the modules are required for this collection to work, you can copy this requirements.yml file example.
+- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/)
+- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
+- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
+- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
+- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
 
-```yaml
----
-collections:
-  - name: ansible.platform
-  - name: ansible.hub
-  - name: ansible.controller
-  - name: ansible.eda
-  - name: infra.aap_configuration
-...
-```
+***
 
+# Editing this README
 
-## Links to Ansible Automation Platform Collections
+When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
 
-|                                      Collection Name                                |            Purpose            |
-|:-----------------------------------------------------------------------------------:|:-----------------------------:|
-| ansible.platform repo (no public repo for this collection)                          | gateway/platform modules      |
-| [ansible.hub repo](https://github.com/ansible-collections/ansible_hub)              | Automation hub modules        |
-| [ansible.controller repo](https://github.com/ansible/awx/tree/devel/awx_collection) | Automation controller modules |
-| [ansible.eda repo](https://github.com/ansible/event-driven-ansible)                 | Event Driven Ansible modules  |
+## Suggestions for a good README
 
-## Links to other Validated Configuration Collections for Ansible Automation Platform
+Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
 
-|                                      Collection Name                                       |                      Purpose                      |
-|:------------------------------------------------------------------------------------------:|:-------------------------------------------------:|
-| [AAP Configuration Extended](https://github.com/redhat-cop/aap_configuration_extended)     | Where other useful roles that don't fit here live |
-| [EE Utilities](https://github.com/redhat-cop/ee_utilities)                                 | Execution Environment creation utilities          |
-| [AAP installation Utilities](https://github.com/redhat-cop/aap_utilities)                  | Ansible Automation Platform Utilities             |
-| [AAP Configuration Template](https://github.com/redhat-cop/aap_configuration_template)     | Configuration Template for this suite             |
+## Name
+Choose a self-explaining name for your project.
 
-## AAP config
+## Description
+Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
 
-`ansible-playbook -i inventory_dev.yml -l dev playbooks/aap_config.yml --ask-vault-pass`
+## Badges
+On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
 
-## custom ee
+## Visuals
+Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
 
-currently doesn't work in CLI, expected to be run in Controller
+## Installation
+Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
 
-## custom collections
+## Usage
+Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
 
-currently doesn't work in CLI, expected to be run in Controller
+## Support
+Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
 
-## aap utilities (aap installer)
+## Roadmap
+If you have ideas for releases in the future, it is a good idea to list them in the README.
 
-`ansible-playbook -i inventory_dev.yml playbooks/install_aap.yml --ask-vault-pass`
+## Contributing
+State if you are open to contributions and what your requirements are for accepting them.
 
-Acquire your token at [redhat api](https://access.redhat.com/management/api/) see [access article](https://access.redhat.com/articles/3626371)
+For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
 
-## install and configure
+You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
 
-`ansible-playbook -i inventory_dev.yml -l dev playbooks/install_configure.yml --ask-vault-pass -e "env=dev"`
+## Authors and acknowledgment
+Show your appreciation to those who have contributed to the project.
 
-Acquire your token at [redhat api](https://access.redhat.com/management/api/) see [access article](https://access.redhat.com/articles/3626371)
+## License
+For open source projects, say how it is licensed.
+
+## Project status
+If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.

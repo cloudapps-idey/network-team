@@ -1,0 +1,5 @@
+---
+collections:
+  - name: https://gitlab.com/idey/ansible-config-as-code.git
+    type: git
+    version: main

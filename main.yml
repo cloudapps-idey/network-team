@@ -1,0 +1,12 @@
+---
+- name: Main playbook to create Controller objects
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars_files:
+    - vars/project_vars.yml
+
+  tasks:
+    - name: Run the playbook from the collection to create projects
+      ansible.builtin.import_playbook: ansible_config_as_code.controller_automation.project
