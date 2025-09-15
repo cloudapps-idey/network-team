@@ -1,5 +1,5 @@
 # Input values for creating projects
-controller_projects_all:
+controller_projects:
   - name: "NetworkPaloAlto"
     organization: "NetworkOrg"
     scm_url: "https://gitlab.com/idey/network-team.git"
