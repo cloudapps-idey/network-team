@@ -1,0 +1,7 @@
+---
+namespace: ansible_config_as_code
+name: controller_automation
+version: 1.0.0
+readme: README.md
+authors:
+  - Your Name
