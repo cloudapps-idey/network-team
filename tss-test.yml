@@ -1,0 +1,18 @@
+---
+- name: Retrieve and display secret from Thycotic
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: Retrieve the secret from the Thycotic vault
+      ansible.builtin.set_fact:
+        # The 'community.general.tss' lookup plugin uses the 'thycotic test account'
+        # credential attached to the job template to authenticate.
+        # It takes the secret's name as the argument.
+        retrieved_secret: "{{ lookup('community.general.tss', 'AAP-Ptype-TestACC') }}"
+
+    - name: Display the retrieved secret content
+      ansible.builtin.debug:
+        msg: "The content of the secret is: {{ retrieved_secret }}"
+      # Always use no_log: true to prevent sensitive data from being shown in the output
+      #no_log: true
