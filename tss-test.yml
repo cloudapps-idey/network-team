@@ -9,7 +9,7 @@
         # The 'community.general.tss' lookup plugin uses the 'thycotic test account'
         # credential attached to the job template to authenticate.
         # It takes the secret's name as the argument.
-        retrieved_secret: "{{ lookup('delinea.ss', 'AAP-Ptype-TestACC') }}"
+        retrieved_secret: "{{ lookup('delinea.ss.tss', 'AAP-Ptype-TestACC') }}"
 
     - name: Display the retrieved secret content
       ansible.builtin.debug:
