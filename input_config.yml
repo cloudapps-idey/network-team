@@ -1,0 +1,9 @@
+# input_config.yml (In your GitHub Repo)
+
+---
+# AAP Credential Configuration
+credential_jobs:
+  - org_name: "DevOps_Team"
+    aap_credential_name: "GitHub Token for Automation"
+    secret_key_path: "Application_Secrets.GitHub_Token"
+    
